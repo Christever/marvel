@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Superhero.css";
 export default function Superhero({
-  name="Anonymous",
+  name = "Anonymous",
   description = "Pas de description actuellement",
   films = ["Aucun film"],
   photo = "./anonymous.webp",
@@ -9,13 +9,19 @@ export default function Superhero({
   estLePrefere,
   superHeroClique = () => {},
 }) {
-  // Variables
+  // States
   const [showDetails, setShowDetails] = useState(false);
+  const [afficherInfo, setAfficherInfo] = useState(false);
 
   // Functions
   const handleClickShowDetails = (event) => {
     event.stopPropagation();
     setShowDetails((statePrecedent) => !statePrecedent);
+  };
+
+  const nomClique = (event) => {
+    event.stopPropagation();
+    setAfficherInfo(true);
   };
 
   return (
@@ -25,11 +31,14 @@ export default function Superhero({
     >
       {/* Carte */}
       <img alt={`photo de ${name}`} src={photo} />
-      <h2>{name}</h2>
+      <h2 onClick={nomClique}>{name}</h2>
       <p>{description}</p>
 
       {/* Details */}
-      <div className="read-more" onClick={(event)=>handleClickShowDetails(event)}>
+      <div
+        className="read-more"
+        onClick={(event) => handleClickShowDetails(event)}
+      >
         {showDetails ? "Masquer les détails" : "En savoir plus"}
       </div>
       {showDetails && (
