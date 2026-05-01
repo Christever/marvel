@@ -24,7 +24,8 @@ export default function NouveauHero() {
   }, [nouveauHero.nom]);
 
   // Fonctions
-  const sauvegarderHero = () => {
+  const sauvegarderHero = (e) => {
+    e.preventDefault();
     setNouveauHero((ancienHero) => ({
       ...ancienHero,
       nom: nom.current.value,
@@ -49,30 +50,32 @@ export default function NouveauHero() {
         photo={nouveauHero.photo != "" ? nouveauHero.photo : undefined}
       />
       {/* Parametrage du nouveau Superhéro */}
-      <div
-        style={{
-          border: "1px black solid",
-          padding: "15px",
-        }}
-      >
-        <h3 style={{ textAlign: "center" }}>Crée ton superhero</h3>
-        <div style={{ marginTop: 10 }}>
-          <label htmlFor="photo">Photo</label>
+      <form className="border px-[15px] bg-red-marvel text-white rounded">
+        <h3 className="text-center text-3xl font-semibold uppercase my-5">
+          Crée ton superhero
+        </h3>
+        <div>
+          <label htmlFor="photo" className="mb-10">
+            Photo
+          </label>
           <input
             type="text"
             className="input"
-            // className="input"
             name="photo"
             id="photo"
             ref={photo}
           />
         </div>
-        <div style={{ marginTop: 15 }}>
-          <label htmlFor="nom">Nom</label>
+        <div>
+          <label htmlFor="nom" className="label">
+            Nom
+          </label>
           <input type="text" name="nom" id="nom" className="input" ref={nom} />
         </div>
-        <div style={{ marginTop: "15px" }}>
-          <label htmlFor="description">Description</label>
+        <div>
+          <label htmlFor="description" className="label">
+            Description
+          </label>
           <input
             className="input"
             type="text"
@@ -82,18 +85,11 @@ export default function NouveauHero() {
           />
         </div>
 
-        <div
-          style={{
-            marginTop: 10,
-            display: "flex",
-            gap: 5,
-            justifyContent: "end",
-          }}
-        >
-          <Button click={sauvegarderHero}>Sauvegarder</Button>
+        <div className="flex justify-end gap-2 mt-5">
+          <Button click={(event) => sauvegarderHero(event)}>Sauvegarder</Button>
           <Button click={effacerHero}>Effacer</Button>
         </div>
-      </div>
+      </form>
     </>
   );
 }

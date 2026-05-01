@@ -18,8 +18,11 @@ export default function App() {
 
   return (
     <main>
-      <img src="./logo_marvel.webp" alt="logo marvel" className="w-[200px]" />
-      <h1 className="text-3xl">Marvel</h1>
+      <img
+        src="./logo_marvel.webp"
+        alt="logo marvel"
+        className="w-[100px] mx-auto mt-3"
+      />
 
       <Superheros>
         {/* Super hero 1 */}

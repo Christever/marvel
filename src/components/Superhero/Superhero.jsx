@@ -36,7 +36,7 @@ export default function Superhero({
 
       {/* Details */}
       <div
-        className="font-bold mb-[10px] cursor-pointer inline-block"
+        className="font-bold mb-[10px] cursor-pointer hover:text-red-marvel"
         onClick={(event) => handleClickShowDetails(event)}
       >
         {showDetails ? "Masquer les détails" : "En savoir plus"}
