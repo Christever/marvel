@@ -31,12 +31,12 @@ export default function Superhero({
     >
       {/* Carte */}
       <img alt={`photo de ${name}`} src={photo} />
-      <h2 onClick={nomClique}>{name}</h2>
+      <h2 onClick={nomClique} className="text-3xl">{name}</h2>
       <p>{description}</p>
 
       {/* Details */}
       <div
-        className="read-more"
+        className="font-bold mb-[10px] cursor-pointer inline-block"
         onClick={(event) => handleClickShowDetails(event)}
       >
         {showDetails ? "Masquer les détails" : "En savoir plus"}

@@ -18,7 +18,9 @@ export default function App() {
 
   return (
     <main>
-      <h1>Marvel</h1>
+      <img src="./logo_marvel.webp" alt="logo marvel" className="w-[200px]" />
+      <h1 className="text-3xl">Marvel</h1>
+
       <Superheros>
         {/* Super hero 1 */}
         <Ironman heroPrefere={heroPrefere} superHeroClique={superHeroClique} />
@@ -34,7 +36,6 @@ export default function App() {
 
         {/* Nouveau superhéro */}
         <NouveauHero />
-        
       </Superheros>
     </main>
   );

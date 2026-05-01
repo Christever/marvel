@@ -61,6 +61,7 @@ export default function NouveauHero() {
           <input
             type="text"
             className="input"
+            // className="input"
             name="photo"
             id="photo"
             ref={photo}
